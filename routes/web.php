@@ -22,12 +22,12 @@ Route::post('/posts','PostController@store' );
 Route::get('/posts/create','PostController@create' );
 
 //更新文章
-Route::get('/posts/{post}/edit','PostController@edit' );
-Route::put('/posts/{post}','PostController@update' );
+Route::get('/posts/{post}/edit','PostController@edit')->where('post','[0-9]+');
+Route::put('/posts/{post}','PostController@update' )->where('post','[0-9]+');
 //删除文章
-Route::get('/posts/{post}/delete','PostController@delete' );
+Route::get('/posts/{post}/delete','PostController@delete' )->where('post','[0-9]+');
 //文章详情页
-Route::get('/posts/{post}','PostController@show')->where('posts','[0-9]+');
+Route::get('/posts/{post}','PostController@show')->where('post','[0-9]+');
 
 
 
