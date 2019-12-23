@@ -1,4 +1,4 @@
-var editor = new wangEditor('content');
+const editor = new wangEditor('content');
 
 editor.config.uploadImgUrl = '/posts/image/upload';
 

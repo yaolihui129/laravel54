@@ -16,16 +16,18 @@ Route::get('/', function () {
 });
 //文章列表页
 Route::get('/posts','PostController@index' );
-//文章详情页
-Route::get('/posts/{post}','PostController@show' );
+
 //创建文章
-Route::get('/posts/create','PostController@create' );
 Route::post('/posts','PostController@store' );
+Route::get('/posts/create','PostController@create' );
+
 //更新文章
 Route::get('/posts/{post}/edit','PostController@edit' );
 Route::put('/posts/{post}','PostController@update' );
 //删除文章
 Route::get('/posts/{post}/delete','PostController@delete' );
+//文章详情页
+Route::get('/posts/{post}','PostController@show')->where('posts','[0-9]+');
 
 
 
