@@ -29,5 +29,6 @@ Route::get('/posts/{post}/delete','PostController@delete' )->where('post','[0-9]
 //文章详情页
 Route::get('/posts/{post}','PostController@show')->where('post','[0-9]+');
 
+//图片上传
 
-
+Route::post('/posts/image/upload','PostController@imageUpload');
