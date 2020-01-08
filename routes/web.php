@@ -49,5 +49,9 @@ Route::group(['middleware'=>'auth:web'],function(){
 	Route::post('/posts/image/upload','PostController@imageUpload');
 	//提交评论
 	Route::post('/posts/{post}/comment','PostController@comment')->where('post','[0-9]+');
+	// 赞
+	Route::get('/posts/{post}/zan', '\App\Http\Controllers\PostController@zan')->where('post','[0-9]+');
+	// 取消赞
+	Route::get('/posts/{post}/unzan', '\App\Http\Controllers\PostController@unzan')->where('post','[0-9]+');
 });
 
