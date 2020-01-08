@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Model\Post;
 use App\Model\Comment;
 use App\Model\Zan;
@@ -31,7 +32,7 @@ class PostController extends Controller
             'content'=>'required|string|min:10',
         ]);
         //2.逻辑
-        $user_id = \Auth::id();
+        $user_id = Auth::id();
         $params = array_merge(request(['title','content']),compact('user_id'));
         $post=Post::create($params);
         //3.渲染
@@ -85,7 +86,7 @@ class PostController extends Controller
 		//2.逻辑
 		$comment = new Comment();
 		// dd($comment);
-		$comment->user_id = \Auth::id();
+		$comment->user_id = Auth::id();
 		$comment->content = request('content');
 		$post->comments()->save($comment);
 		//3.渲染
@@ -96,7 +97,7 @@ class PostController extends Controller
 	//赞
 	public function zan(Post $post){
 		$param = [
-			'user_id' =>\Auth::id(),
+			'user_id' =>Auth::id(),
 			'post_id' => $post->id,
 		];
 		Zan::firstOrCreate($param);
@@ -105,7 +106,7 @@ class PostController extends Controller
 	
 	//取消赞
 	public function unzan(Post $post){
-		$post->zan(\Auth::id())->delete();
+		$post->zan(Auth::id())->delete();
 		return back();
 	}
 	
