@@ -77,12 +77,10 @@ class PostController extends Controller
 	
 	//提交评论
 	public function comment(Post $post){
-		
 		//1.验证
 		$this->validate(request(),[
 		    'content'=>'required|min:3',
 		]);
-		
 		//2.逻辑
 		$comment = new Comment();
 		// dd($comment);
@@ -91,7 +89,6 @@ class PostController extends Controller
 		$post->comments()->save($comment);
 		//3.渲染
 		return back();
-		
 	}
 	
 	//赞

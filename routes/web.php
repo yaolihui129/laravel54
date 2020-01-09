@@ -50,9 +50,17 @@ Route::get('/', function () {
 		//提交评论
 		Route::post('/posts/{post}/comment','PostController@comment')->where('post','[0-9]+');
 		// 赞
-		Route::get('/posts/{post}/zan', '\App\Http\Controllers\PostController@zan')->where('post','[0-9]+');
+		Route::get('/posts/{post}/zan', 'PostController@zan')->where('post','[0-9]+');
 		// 取消赞
-		Route::get('/posts/{post}/unzan', '\App\Http\Controllers\PostController@unzan')->where('post','[0-9]+');
+		Route::get('/posts/{post}/unzan', 'PostController@unzan')->where('post','[0-9]+');
+		
+		//个人中心
+		Route::get('/user/{user}', 'UserController@show')->where('user','[0-9]+');
+		//关注
+		Route::post('/user/{user}/fan', 'UserController@fan')->where('user','[0-9]+');
+		//取消关注
+		Route::post('/user/{user}/unfan', 'UserController@unfan')->where('user','[0-9]+');
+		
 	});
 
 
