@@ -2,14 +2,12 @@
 
 @section("content")
     <div class="col-sm-8">
-        <blockquote>
-            <p>
-				<img src="{{$user->avatar}}" alt="{{$user->avatar}}" class="img-rounded" style="border-radius:500px; height: 40px"> 
-				{{$user->name}}
-            </p>
-            <footer>关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</footer>
-            @include('user.badges.like', ['target_user' => $user])
-        </blockquote>
+		<p>
+			<img src="{{$user->avatar}}" alt="{{$user->avatar}}" class="img-rounded" style="border-radius:500px; height: 40px"> 
+			{{$user->name}}
+		</p>
+		<footer>关注：{{$user->stars_count}}｜粉丝：{{$user->fans_count}}｜文章：{{$user->posts_count}}</footer>
+		@include('user.badges.like', ['target_user' => $user])
     </div>
     <div class="col-sm-8 blog-main">
         <div class="nav-tabs-custom">
@@ -56,7 +54,5 @@
             </div>
             <!-- /.tab-content -->
         </div>
-
-
     </div><!-- /.blog-main -->
 @endsection

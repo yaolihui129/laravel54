@@ -61,6 +61,10 @@ Route::get('/', function () {
 		//取消关注
 		Route::post('/user/{user}/unfan', 'UserController@unfan')->where('user','[0-9]+');
 		
+		//专题详情页
+		Route::get('/topic/{topic}', 'TopicController@show')->where('topic','[0-9]+');
+		//投稿
+		Route::post('/topic/{topic}/submit', 'TopicController@submit')->where('topic','[0-9]+');
 	});
 
 
