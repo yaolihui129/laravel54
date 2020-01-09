@@ -24,7 +24,12 @@ class LoginController extends Controller
 				'is_remember' 	=> 'integer',
 		]);
 		//逻辑
-		$user = request(['email','password']);
+		// $user = request(['email','password']);
+		//向下兼容Laravel52
+		$user = [
+			'email'		=> request('email'),
+			'password'	=> request('password')
+		];
 		$is_remember = boolval(request('is_remember'));
 		if (Auth::attempt($user,$is_remember)) {
 				return redirect('/posts');
