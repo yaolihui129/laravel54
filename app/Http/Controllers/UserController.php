@@ -51,11 +51,11 @@ class UserController extends Controller
 		$posts = $user->posts()->orderBy('created_at','desc')->take(10)->get();
 		//这个人关注的用户，包含关注用户的 关注/粉丝/文章数
 		$stars = $user->stars;
-		$susers = User::whereIn('id',$stars>pluck('star_id'))->withCount(['stars','fans','posts'])->get();
+		$susers = User::whereIn('id',$stars->pluck('star_id'))->withCount(['stars','fans','posts'])->get();
 		//关注这个人的粉丝用户，包含粉丝用户的 关注/粉丝/文章数
 		$fans = $user->fans;
 		$fusers = User::whereIn('id',$fans->pluck('fan_id'))->withCount(['stars','fans','posts'])->get();
-		
+		//渲染
 		return view('user.show',compact('user','posts','susers','fusers'));
 	}
 	

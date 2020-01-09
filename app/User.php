@@ -34,12 +34,12 @@ class User extends Authenticatable
 	
 	//关注我的Fans
 	public function stars(){
-		return $this->hasMany(\App\Model\Fan::class,'star_id','id');
+		return $this->hasMany(\App\Model\Fan::class,'fan_id','id');
 	}
 	
 	//我关注的
 	public function fans(){
-		return $this->hasMany(\App\Model\Fan::class,'fan_id','id');
+		return $this->hasMany(\App\Model\Fan::class,'star_id','id');
 	}
 	
 	//关注某人
