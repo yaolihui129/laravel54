@@ -42,92 +42,30 @@
             <a class="navbar-brand" href=""><img src="{{url('images/campaign/logo.png')}}"/></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-
             <ul class="nav navbar-nav  navbar-right col-md-3">
                 @if(empty($login))
-                    <li>
-                        <a href="javascript:void(0);" id="btnLogin">登录</a>
-                    </li>
-                    <li>
-                        <a href="{{url('/register')}}" target="_blank">注册</a>
-                    </li>
+                    <li><a href="javascript:void(0);" id="btnLogin">登录</a></li>
+                    <li><a href="{{url('/register')}}" target="_blank">注册</a></li>
                 @else
-                    <li>
-                        <a href="{{url('/desktop')}}" target="_blank">我的控制台</a>
-                    </li>
-                    <li class="my-control">
-                        <a href="{{url('/logout')}}">退出</a>
-                    </li>
+                    <li><a href="{{url('/desktop')}}" target="_blank">我的控制台</a></li>
+                    <li class="my-control"><a href="{{url('/logout')}}">退出</a></li>
                 @endif
             </ul>
-            <ul class="nav navbar-nav navbar-right  col-md-5">
-                <li class="active">
-                    <a href="{{url('')}}">首页</a>
-                </li>
-                <li id="webtest">
-                    <a href="{{url('/camp/webtest')}}">Web产品测试</a>
-                </li>
-                <li id="apptest">
-                    <a href="{{url('/camp/apptest')}}">App测试</a>
-                </li>
+            <ul class="nav navbar-nav navbar-right  col-md-7">
+                <li class="active"><a href="{{url('')}}">首页</a></li>
+                <li id="webtest"><a href="{{url('/camp/webtest')}}">Web测试</a></li>
+                <li id="apptest"><a href="{{url('/camp/apptest')}}">App测试</a></li>
                 @if(!empty($login))
-                    <li id="u8">
-                        <a href="{{url('/camp/u8')}}" target="_blank">U8专区</a>
-                    </li>
-                    <li id="ys">
-                        <a href="{{url('/camp/ys/ysIndex')}}" target="_blank">YS专区</a>
-                    </li>
+					<li id="blog"><a href="{{url('/posts')}}" target="_blank">测试文档</a></li>
+                    <li id="u8"><a href="{{url('/camp/u8')}}" target="_blank">U8专区</a></li>
+                    <li id="ys"><a href="{{url('/camp/ys/ysIndex')}}" target="_blank">YS专区</a></li>
                 @endif
             </ul>
         </div>
     </div>
 </nav>
 @yield('content')
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="{{url('/images/campaign/footer-logo.png')}}"/>
-            </div>
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-3">
-                        <p class="title">服务</p>
-                        <p>
-                            <a href="#">服务认证</a>
-                        </p>
-                        <p>
-                            <a href="#">在线客服</a>
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="title">伙伴</p>
-                        <p>
-                            <a href="#">伙伴体系</a>
-                        </p>
-                        <p>
-                            <a href="#">合作联盟</a>
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="title">公司</p>
-                        <p>
-                            <a href="#">关于我们</a>
-                        </p>
-                        <p>
-                            <a href="#">新闻资讯</a>
-                        </p>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="title">关注我们</p>
-                        <img src="{{url('/images/campaign/code.png')}}"/>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</footer>
+@include('layout.footer')
 <script type="text/javascript">
     var start = location.href.lastIndexOf("/") + 1;
     var dhId = location.href.substr(start);

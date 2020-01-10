@@ -24,7 +24,7 @@
                         <p class=""><a href="/posts/{{$post->id}}" >{{$post->title}}</a></p>
 
 
-                        <p>{!! str_limit($post->content, 100, '...') !!}</p>
+                        <p>{!! str_limit($post->content, 10, '...') !!}</p>
                     </div>
                     @endforeach
                 </div>
