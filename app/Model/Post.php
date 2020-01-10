@@ -33,7 +33,7 @@ class Post extends Model
 	}
 	
 	public function postTopics(){
-		return $this->hasMany(\App\Model\PostTopics::class, 'post_id', 'id');
+		return $this->hasMany(\App\Model\PostTopic::class, 'post_id', 'id');
 	}
 	
 	// 不属于某个专题的文章

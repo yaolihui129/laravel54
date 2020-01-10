@@ -5,8 +5,8 @@ namespace App\Model;
 use App\Model;
 use Illuminate\Database\Eloquent\Builder; 
 
-class PostTpoics extends Model
+class PostTopic extends Model
 {
     //
-	protected $table = "post_topics";
+	protected $table = "post_topic";
 }
