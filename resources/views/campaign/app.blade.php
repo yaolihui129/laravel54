@@ -140,7 +140,7 @@
             type: 2,
             title: "登录",
             skin: '', // 加上边框
-            area: ["400px", "400px"], // 宽高
+            area: ["600px", "450px"], // 宽高
             scrollbar: false,
             maxmin: false,
             content: CommonUtil.getRootPath() + "/login"

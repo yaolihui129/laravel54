@@ -4,15 +4,19 @@
     <blockquote>
         <p>{{$topic->name}}</p>
         <footer>文章：{{$topic->post_topics_count}}</footer>
-        <button class="btn btn-default topic-submit"  data-toggle="modal" data-target="#topic_submit_modal" topic-id="{{$topic->id}}" type="button">
-		投稿</button>
+        <button class="btn btn-default topic-submit"  data-toggle="modal" 
+		data-target="#topic_submit_modal" topic-id="{{$topic->id}}" type="button">
+			投稿
+		</button>
     </blockquote>
 </div>
 <div class="modal fade" id="topic_submit_modal" tabindex="-1" role="dialog" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
                 <h4 class="modal-title" id="myModalLabel">我的文章</h4>
             </div>
             <div class="modal-body">
@@ -41,19 +45,24 @@
             <div class="tab-pane active" id="tab_1">
                 @foreach($posts as $post)
                 <div class="blog-post" style="margin-top: 30px">
-                    <p class=""><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a> {{$post->created_at->diffForHumans()}}</p>
-                    <p class=""><a href="/posts/{{$post->id}}" >{{$post->title}}</a></p>
-
+                    <p class="">
+						<a href="/user/{{$post->user->id}}">
+							{{$post->user->name}}
+						</a> 
+						{{$post->created_at->diffForHumans()}}
+					</p>
+                    <p class="">
+						<a href="/posts/{{$post->id}}" >
+							{{$post->title}}
+						</a>
+					</p>
                     <p>{!! str_limit($post->content, 100, '...') !!}</p>
                 </div>
                 @endforeach
             </div>
-
         </div>
         <!-- /.tab-content -->
     </div>
-
-
 </div><!-- /.blog-main -->
 @endsection
 
