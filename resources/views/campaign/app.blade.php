@@ -43,7 +43,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav  navbar-right col-md-3">
-                @if(empty($login))
+                @if(!Auth::check())
                     <li><a href="javascript:void(0);" id="btnLogin">登录</a></li>
                     <li><a href="{{url('/register')}}" target="_blank">注册</a></li>
                 @else
@@ -55,7 +55,7 @@
                 <li class="active"><a href="{{url('')}}">首页</a></li>
                 <li id="webtest"><a href="{{url('/camp/webtest')}}">Web测试</a></li>
                 <li id="apptest"><a href="{{url('/camp/apptest')}}">App测试</a></li>
-                @if(!empty($login))
+                @if(Auth::check())
 					<li id="blog"><a href="{{url('/posts')}}" target="_blank">测试文档</a></li>
                     <li id="u8"><a href="{{url('/camp/u8')}}" target="_blank">U8专区</a></li>
                     <li id="ys"><a href="{{url('/camp/ys/ysIndex')}}" target="_blank">YS专区</a></li>

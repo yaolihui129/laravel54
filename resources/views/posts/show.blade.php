@@ -3,23 +3,31 @@
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
                 <div style="display:inline-flex">
-                    <h2 class="blog-post-title">{{$post->title}}</h2>
+                    <h2 class="blog-post-title">{{$post->title}} &nbsp;</h2> 
                     @can('update',$post)
                     <a style="margin: auto"  href="/posts/{{$post->id}}/edit">
-                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true">
+							编辑
+						</span>
                     </a>
                     @endcan
-
+					&nbsp;
                     @can('delete',$post)
                     <a style="margin: auto"  href="/posts/{{$post->id}}/delete">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true">
+							删除
+						</span>
                     </a>
                     @endcan
                 </div>
 
                 <p class="blog-post-meta">{{$post->created_at}} <a href="/user/{{$post->user_id}}">{{$post->user->name}}</a></p>
 
-                {!!$post->content!!}
+                <!-- {!!$post->content!!} -->
+				<textarea id="content" name="content" class="form-control" style="height:400px;max-height:500px;"  placeholder="这里是内容">
+				    {{$post->content}}
+				</textarea>
+				<br>
                 <div>
                     @if ($post->zan(\Auth::id())->exists())
 						<a href="/posts/{{$post->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>

@@ -13,12 +13,7 @@ class IndexController extends Controller
 	}
 	
 	public function getIndex() {
-		$user=\Auth::user();
-		$pages=array();
-		if(!empty($user)){
-			$pages["login"]="1";
-		}
-		return view ( 'campaign.index' )->with($pages);
+		return view ( 'campaign.index' );
 	}
 	
 	/**
