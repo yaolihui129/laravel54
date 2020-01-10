@@ -21,9 +21,7 @@
                     @endcan
                 </div>
 
-                <p class="blog-post-meta">{{$post->created_at}} <a href="/user/{{$post->user_id}}">{{$post->user->name}}</a></p>
-
-                <!-- {!!$post->content!!} -->
+                <p class="blog-post-meta">{{$post->created_at}} <a href="/user/{{$post->user_id}}">{{$post->user->name}}</a></p>                
 				<textarea id="content" name="content" class="form-control" style="height:400px;max-height:500px;"  placeholder="这里是内容">
 				    {{$post->content}}
 				</textarea>
