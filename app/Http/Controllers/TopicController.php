@@ -26,7 +26,7 @@ class TopicController extends Controller
 	public function submit(Topic $topic){
 		
 		$this->validate(request(),[
-		   'post_ids' => 'required|array',
+		   'post_id' => 'required|array',
 		]);
 
 		$post_ids = request('post_ids');

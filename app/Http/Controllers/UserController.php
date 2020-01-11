@@ -8,7 +8,6 @@ use App\User;
 use App\Model\Fan;
 class UserController extends Controller
 {
-    //
 	public function index(){
 		return;
 	}
