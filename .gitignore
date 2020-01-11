@@ -17,6 +17,8 @@ composer.lock
 .env.php
 .DS_Store
 .env
+.project
+.setting/
 .buildpath
 Homestead.yaml
 Homestead.json
