@@ -4,7 +4,6 @@ vendor/
 nbproject/
 node_modules/
 npm-debug.log
-
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
@@ -13,10 +12,12 @@ app/storage/
 public/storage
 public/hot
 storage/*.key
+composer.lock
 .env.*.php
 .env.php
 .DS_Store
 .env
+.buildpath
 Homestead.yaml
 Homestead.json
 
