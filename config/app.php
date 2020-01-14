@@ -177,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 		// Encore\Admin\Providers\AdminServiceProvider::class
+		Laravel\Scout\ScoutServiceProvider::class,
     ],
 
     /*
