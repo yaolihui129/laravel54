@@ -35,8 +35,8 @@
 
                 @foreach($posts as $post)
                 <div class="blog-post">
-                    <h2 class="blog-post-title"><a href="{{env('APP_PATH', '')}}/posts/{{$post->id}}" >{{$post->title}}</a></h2>
-                    <p class="blog-post-meta">{{$post->created_at}} by <a href="{{env('APP_PATH', '')}}/user/{{$post->user_id}}">{{$post->user->name}}</a></p>
+                    <h2 class="blog-post-title"><a href="{{asset('/posts/')}}{{$post->id}}" >{{$post->title}}</a></h2>
+                    <p class="blog-post-meta">{{$post->created_at}} by <a href="{{asset('/user/')}}{{$post->user_id}}">{{$post->user->name}}</a></p>
 
                     {!!str_limit($post->content,10,'...')!!}
                     <p class="blog-post-meta">赞 {{$post->zans_count}}  | 评论 {{$post->comments_count}}</p>

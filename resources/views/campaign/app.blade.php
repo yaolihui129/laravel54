@@ -45,20 +45,20 @@
             <ul class="nav navbar-nav  navbar-right col-md-3">
                 @if(!Auth::check())
                     <li><a href="javascript:void(0);" id="btnLogin">登录</a></li>
-                    <li><a href="{{env('APP_PATH', '')}}/register" target="_blank">注册</a></li>
+                    <li><a href="{{asset('/register')}}" target="_blank">注册</a></li>
                 @else
-                    <li><a href="{{env('APP_PATH', '')}}/desktop" target="_blank">我的控制台</a></li>
+                    <li><a href="{{asset('/desktop')}}" target="_blank">我的控制台</a></li>
                     <li class="my-control"><a href="/logout">退出</a></li>
                 @endif
             </ul>
             <ul class="nav navbar-nav navbar-right  col-md-7">
-                <li class="active"><a href="{{env('APP_PATH', '')}}/">首页</a></li>
-                <li id="webtest"><a href="{{env('APP_PATH', '')}}/camp/webtest">Web测试</a></li>
-                <li id="apptest"><a href="{{env('APP_PATH', '')}}/camp/apptest">App测试</a></li>
+                <li class="active"><a href="{{asset('/')}}">首页</a></li>
+                <li id="webtest"><a href="{{asset('/camp/webtest')}}">Web测试</a></li>
+                <li id="apptest"><a href="{{asset('/camp/apptest')}}">App测试</a></li>
                 @if(Auth::check())
-					<li id="blog"><a href="{{env('APP_PATH', '')}}/posts" target="_blank">测试文档</a></li>
-                    <li id="u8"><a href="{{env('APP_PATH', '')}}/camp/u8" target="_blank">U8专区</a></li>
-                    <li id="ys"><a href="{{env('APP_PATH', '')}}/camp/ys/ysIndex" target="_blank">YS专区</a></li>
+					<li id="blog"><a href="{{asset('//posts')}}" target="_blank">测试文档</a></li>
+                    <li id="u8"><a href="{{asset('/camp/u8')}}" target="_blank">U8专区</a></li>
+                    <li id="ys"><a href="{{asset('/camp/ys/ysIndex')}}" target="_blank">YS专区</a></li>
                 @endif
             </ul>
         </div>
@@ -73,17 +73,6 @@
         $("#" + dhId).siblings().removeClass("active");
         $("#" + dhId).addClass("active");
     }
-    $("#btnLogin").on("click", function () {
-        layer.open({
-            type: 2,
-            title: "登录",
-            skin: '', // 加上边框
-            area: ["600px", "450px"], // 宽高
-            scrollbar: false,
-            maxmin: false,
-            content: CommonUtil.getRootPath() + "/login"
-        });
-    });
     $(window).scroll(function () {
         if ($(window).scrollTop() >= 600) {
             $(".value").numberRock({

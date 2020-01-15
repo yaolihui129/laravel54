@@ -21,13 +21,13 @@
                     @foreach($posts as $post)
                     <div class="blog-post" style="margin-top: 30px">
                         <p class="">
-							<a href="{{env('APP_PATH', '')}}/user/{{$post->user->id}}">
+							<a href="{{asset('/user')}}/{{$post->user->id}}">
 								{{$post->user->name}}
 							</a> 
 							{{$post->created_at->diffForHumans()}}
 						</p>
                         <p class="">
-							<a href="{{env('APP_PATH', '')}}/posts/{{$post->id}}" >
+							<a href="{{asset('/posts')}}/{{$post->id}}" >
 								{{$post->title}}
 							</a>
 						</p>
@@ -41,7 +41,7 @@
                 <div class="tab-pane" id="tab_2">
                     @foreach($susers as $user)
                     <div class="blog-post" style="margin-top: 30px">
-                        <p class=""><a href="/user/{{$post->user_id}}">{{$user->name}}</a></p>
+                        <p class=""><a href="{{asset('/user/')}}{{$post->user_id}}">{{$user->name}}</a></p>
                         <p class="">关注：{{$user->stars_count}} | 粉丝：{{$user->fans_count}}｜ 文章：{{$user->posts_count}}</p>
 
                         @include('user.badges.like', ['target_user' => $user])
@@ -53,7 +53,7 @@
                 <div class="tab-pane" id="tab_3">
                     @foreach($fusers as $user)
                         <div class="blog-post" style="margin-top: 30px">
-                            <p class=""><a href="/user/{{$post->user_id}}">{{$user->name}}</a></p>
+                            <p class=""><a href="{{asset('/user/')}}{{$post->user_id}}">{{$user->name}}</a></p>
                             <p class="">关注：{{$user->stars_count}} | 粉丝：{{$user->fans_count}}｜ 文章：{{$user->posts_count}}</p>
                             @include('user.badges.like', ['target_user' => $user])
                         </div>

@@ -44,7 +44,7 @@
                     </ul>
                     <div class="clearfix"></div>
 
-                    <a href="/desktop" class="btn center-block btn-test ">立即体验
+                    <a href="{{asset('/desktop')}}" class="btn center-block btn-test ">立即体验
                         <span class="top1"></span><span class="top2"></span>
                         <span class="right1"></span><span class="right2"></span>
                         <span class="bottom1"></span><span class="bottom2"></span>

@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
         <div class="col-sm-8 blog-main">
-            <form action="{{env('APP_PATH', '')}}/posts" method="POST">
+            <form action="{{asset('/posts')}}" method="POST">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label>标题</label>

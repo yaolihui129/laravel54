@@ -9,9 +9,9 @@
                       {{ \Auth::user()->name }}<span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{env('APP_PATH', '')}}/user/{{\Auth::id()}}">我的主页</a></li>
-                        <li><a href="{{env('APP_PATH', '')}}/user/me/setting">个人设置</a></li>
-                        <li><a href="{{env('APP_PATH', '')}}/logout">注销</a></li>
+                        <li><a href="{{asset('/user')}}/{{\Auth::id()}}">我的主页</a></li>
+                        <li><a href="{{asset('/user/me/setting')}}">个人设置</a></li>
+                        <li><a href="{{asset('/logout')}}">注销</a></li>
                     </ul>
                 </div>
             </li>

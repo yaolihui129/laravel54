@@ -5,7 +5,7 @@
                 <div style="display:inline-flex">
                     <h2 class="blog-post-title">{{$post->title}} &nbsp;</h2> 
                     @can('update',$post)
-                    <a style="margin: auto"  href="{{env('APP_PATH', '')}}/posts/{{$post->id}}/edit">
+                    <a style="margin: auto"  href="{{asset('APP_PATH', '')}}/posts/{{$post->id}}/edit">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true">
 							编辑
 						</span>
@@ -13,7 +13,7 @@
                     @endcan
 					&nbsp;
                     @can('delete',$post)
-                    <a style="margin: auto"  href="{{env('APP_PATH', '')}}/posts/{{$post->id}}/delete">
+                    <a style="margin: auto"  href="{{asset('APP_PATH', '')}}/posts/{{$post->id}}/delete">
                         <span class="glyphicon glyphicon-remove" aria-hidden="true">
 							删除
 						</span>
@@ -21,16 +21,16 @@
                     @endcan
                 </div>
 
-                <p class="blog-post-meta">{{$post->created_at}} <a href="{{env('APP_PATH', '')}}/user/{{$post->user_id}}">{{$post->user->name}}</a></p>                
+                <p class="blog-post-meta">{{$post->created_at}} <a href="{{asset('APP_PATH', '')}}/user/{{$post->user_id}}">{{$post->user->name}}</a></p>                
 				<textarea id="content" name="content" class="form-control" style="height:400px;max-height:500px;"  placeholder="这里是内容">
 				    {{$post->content}}
 				</textarea>
 				<br>
                 <div>
                     @if ($post->zan(\Auth::id())->exists())
-						<a href="{{env('APP_PATH', '')}}/posts/{{$post->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
+						<a href="{{asset('APP_PATH', '')}}/posts/{{$post->id}}/unzan" type="button" class="btn btn-default btn-lg">取消赞</a>
 					@else
-						<a href="{{env('APP_PATH', '')}}/posts/{{$post->id}}/zan" type="button" class="btn btn-primary btn-lg">赞</a>
+						<a href="{{asset('APP_PATH', '')}}/posts/{{$post->id}}/zan" type="button" class="btn btn-primary btn-lg">赞</a>
 					@endif
 
                 </div>
@@ -59,7 +59,7 @@
 
                 <!-- List group -->
                 <ul class="list-group">
-                    <form action="{{env('APP_PATH', '')}}/posts/{{$post->id}}/comment" method="post">
+                    <form action="{{asset('/posts')}}/{{$post->id}}/comment" method="post">
                         {{csrf_field()}}                      
                         <li class="list-group-item">
                             <textarea name="content" class="form-control" rows="10"></textarea>
