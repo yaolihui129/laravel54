@@ -3,7 +3,7 @@
         <div class="panel-heading"> 欢迎！</div>
         <div class="panel-body">
             <p>欢迎光临 UpCat</p>
-            <p><strong><a href="/">UpCat</a></strong> 基于 Laravel最新框架构建</p>
+            <p><strong><a href="{{env('APP_PATH', '')}}/">UpCat</a></strong> 基于 Laravel最新框架构建</p>
             <div class="bdsharebuttonbox bdshare-button-style0-24" data-bd-bind="1494580268777">
 				<a href="#" class="bds_more" data-cmd="more"></a>
 				<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">					
@@ -44,7 +44,7 @@
         <ul class="category-root list-group">
             @foreach($topics as $topic)
 			<li class="list-group-item">
-				<a href="/topic/{{$topic->id}}">{{$topic->name}}</a>
+				<a href="{{env('APP_PATH', '')}}/topic/{{$topic->id}}">{{$topic->name}}</a>
 			</li>
 			@endforeach
         </ul>

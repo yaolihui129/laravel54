@@ -7,7 +7,7 @@
 		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="/favicon.ico">
+		<link rel="icon" href="favicon.ico">
 		<title>UPCAT官网</title>
 		<!-- Bootstrap core CSS -->
 		<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
 	<body>
 		<div class="container">
-			<form class="form-signin" method="POST" action="/login">
+			<form class="form-signin" method="POST" action="{{env('APP_PATH', '')}}/login">
 				{{csrf_field()}}
 				<h3 class="form-signin-heading">请登录</h3>
 				<label for="inputEmail" class="sr-only">邮箱</label>
@@ -38,7 +38,7 @@
 				</div>
 				@include('layout.error')
 				<button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-				<a href="/register" class="btn btn-lg btn-primary btn-block" type="submit">去注册>></a>
+				<a href="{{env('APP_PATH', '')}}/register" class="btn btn-lg btn-primary btn-block" type="submit">去注册>></a>
 			</form>
 		</div> <!-- /container -->
 	</body>

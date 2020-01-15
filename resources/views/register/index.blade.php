@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<div class="container">
-			<form class="form-signin" method="POST" action="/register">
+			<form class="form-signin" method="POST" action="{{env('APP_PATH', '')}}/register">
 				{{csrf_field()}}
 				<h2 class="form-signin-heading">请注册</h2>
 				<label for="name" class="sr-only">名字</label>
