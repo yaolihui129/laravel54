@@ -1,5 +1,8 @@
 .idea/
 .vscode/
+.settings/
+.rocketeer/
+/nbproject/private/
 vendor/
 nbproject/
 node_modules/
@@ -18,11 +21,8 @@ composer.lock
 .DS_Store
 .env
 .project
-.setting/
 .buildpath
 Homestead.yaml
 Homestead.json
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
-.rocketeer/
-/nbproject/private/
