@@ -1,6 +1,7 @@
 .idea/
 .vscode/
 vendor/
+.settings/
 nbproject/
 node_modules/
 npm-debug.log
